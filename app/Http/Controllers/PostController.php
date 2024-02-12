@@ -12,7 +12,7 @@ class PostController extends Controller
     public function index(User $user, Request $request)
     {
         $filters = $request->validate([
-            'with_comments' => 'nullable|boolean'
+            'with_comments' => 'nullable|boolean',
         ]);
 
         $query = $user->posts();
