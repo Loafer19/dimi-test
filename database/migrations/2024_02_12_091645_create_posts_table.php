@@ -13,6 +13,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class);
             $table->string('title');
+            $table->string('slug')->unique()->index();
             $table->longText('text');
             $table->json('meta')->nullable();
             $table->dateTime('posted_at')->useCurrent();
